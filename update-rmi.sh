@@ -29,19 +29,19 @@ case "$APP" in
     APP_LABEL="Gestion RMI"
     APP_ENV="Produccion"
     APP_DIR="/srv/gestion-rmi/prod"
-    CONTAINER="rmi-sistema"
+    CONTAINER="gestion-rmi"
     ;;
   gestion_test)
     APP_LABEL="Gestion RMI"
     APP_ENV="Testing"
     APP_DIR="/srv/gestion-rmi/testing"
-    CONTAINER="rmi-testing"
+    CONTAINER="gestion-rmi-testing"
     ;;
   contabilidad_prod)
     APP_LABEL="Contabilidad RMI"
     APP_ENV="Produccion"
     APP_DIR="/srv/contabilidad-rmi/rmi-contabilidad"
-    CONTAINER="rmi-contabilidad"
+    CONTAINER="contabilidad-rmi"
     ;;
   *)
     echo "ERROR: app desconocida '$APP'. Usar: gestion_prod | gestion_test | contabilidad_prod"
