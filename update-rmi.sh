@@ -28,13 +28,13 @@ case "$APP" in
   gestion_prod)
     APP_LABEL="Gestion RMI"
     APP_ENV="Produccion"
-    APP_DIR="/home/rmi/rmi/rmi-sistema/rmi-prod"
+    APP_DIR="/srv/gestion-rmi/prod"
     CONTAINER="rmi-sistema"
     ;;
   gestion_test)
     APP_LABEL="Gestion RMI"
     APP_ENV="Testing"
-    APP_DIR="/home/rmi/rmi/testing-rmi/rmi-test"
+    APP_DIR="/srv/gestion-rmi/testing"
     CONTAINER="rmi-testing"
     ;;
   contabilidad_prod)
