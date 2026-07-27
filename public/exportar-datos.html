@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exportar Datos - RMI Sistema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .info {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 10px 10px 0;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .secondary {
+            background: #2196f3;
+        }
+        .secondary:hover {
+            background: #1976d2;
+        }
+        .stats {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+        .stats p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .stat-number {
+            font-weight: bold;
+            color: #2196f3;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 Exportar Datos del Navegador</h1>
+
+        <div class="info">
+            <strong>📋 ¿Qué hace esta herramienta?</strong>
+            <p>Esta página lee todos los datos almacenados en el localStorage de tu navegador (clientes, tareas, usuarios, etc.) y te permite descargarlos en formato JSON para NO perder nada.</p>
+        </div>
+
+        <div id="stats" class="stats">
+            <p><strong>Datos encontrados en tu navegador:</strong></p>
+            <p>👥 Usuarios: <span class="stat-number" id="usersCount">0</span></p>
+            <p>🏢 Clientes: <span class="stat-number" id="clientsCount">0</span></p>
+            <p>📋 Tareas: <span class="stat-number" id="tasksCount">0</span></p>
+            <p>📜 Registros de auditoría: <span class="stat-number" id="auditCount">0</span></p>
+        </div>
+
+        <button onclick="exportarDatos()">⬇️ Descargar Datos (JSON)</button>
+        <button onclick="verDatos()" class="secondary">👁️ Ver Datos</button>
+
+        <div class="warning" style="margin-top: 30px;">
+            <strong>⚠️ IMPORTANTE - Pasos siguientes:</strong>
+            <ol>
+                <li>Haz clic en "Descargar Datos" y guarda el archivo JSON</li>
+                <li>Ese archivo lo subirás al servidor usando la opción "Importar Datos"</li>
+                <li>Una vez confirmado que los datos están en el servidor, podrás cerrar esta página</li>
+            </ol>
+        </div>
+
+        <div id="preview" style="display: none; margin-top: 20px;">
+            <h3>Vista previa de datos:</h3>
+            <pre id="dataPreview"></pre>
+        </div>
+    </div>
+
+    <script>
+        function cargarEstadisticas() {
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const clientes = JSON.parse(localStorage.getItem('clientes') || '[]');
+            const tareas = JSON.parse(localStorage.getItem('tareas') || '[]');
+            const auditoria = JSON.parse(localStorage.getItem('auditoria') || '[]');
+
+            document.getElementById('usersCount').textContent = users.length;
+            document.getElementById('clientsCount').textContent = clientes.length;
+            document.getElementById('tasksCount').textContent = tareas.length;
+            document.getElementById('auditCount').textContent = auditoria.length;
+        }
+
+        function exportarDatos() {
+            const datos = {
+                users: JSON.parse(localStorage.getItem('users') || '[]'),
+                clientes: JSON.parse(localStorage.getItem('clientes') || '[]'),
+                tareas: JSON.parse(localStorage.getItem('tareas') || '[]'),
+                auditoria: JSON.parse(localStorage.getItem('auditoria') || '[]'),
+                user: JSON.parse(localStorage.getItem('user') || '{}'),
+                exportadoEl: new Date().toISOString(),
+                version: '1.0'
+            };
+
+            const blob = new Blob([JSON.stringify(datos, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            const fecha = new Date().toISOString().split('T')[0];
+            a.href = url;
+            a.download = `rmi-datos-backup-${fecha}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            alert('✅ Datos exportados correctamente. Guarda este archivo en un lugar seguro.');
+        }
+
+        function verDatos() {
+            const datos = {
+                users: JSON.parse(localStorage.getItem('users') || '[]'),
+                clientes: JSON.parse(localStorage.getItem('clientes') || '[]'),
+                tareas: JSON.parse(localStorage.getItem('tareas') || '[]'),
+                auditoria: JSON.parse(localStorage.getItem('auditoria') || '[]'),
+                user: JSON.parse(localStorage.getItem('user') || '{}')
+            };
+
+            document.getElementById('dataPreview').textContent = JSON.stringify(datos, null, 2);
+            document.getElementById('preview').style.display = 'block';
+        }
+
+        // Cargar estadísticas al inicio
+        cargarEstadisticas();
+    </script>
+</body>
+</html>

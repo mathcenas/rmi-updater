@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exportar Datos - RMI Consultores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e293b;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px 48px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            max-width: 480px;
+            width: 90%;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ca8a04;
+            margin-bottom: 4px;
+        }
+
+        h1 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #1e293b;
+        }
+
+        .stats {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .stat-value {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .stat-value.loading {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 11px 20px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .btn-primary {
+            background: #ca8a04;
+            color: #fff;
+        }
+
+        .btn-primary:hover { background: #a16207; }
+        .btn-primary:disabled { background: #d1d5db; cursor: default; }
+
+        .btn-secondary {
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover { background: #e2e8f0; }
+
+        .notice {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #94a3b8;
+            line-height: 1.6;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 16px;
+        }
+
+        .error-msg {
+            font-size: 13px;
+            color: #b91c1c;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin-bottom: 16px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">RMI Consultores</div>
+        <h1>Exportar datos del servidor</h1>
+
+        <div class="error-msg" id="error-msg"></div>
+
+        <div class="stats" id="stats">
+            <div class="stat">
+                <span class="stat-label">Usuarios</span>
+                <span class="stat-value loading" id="cnt-users">...</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Clientes</span>
+                <span class="stat-value loading" id="cnt-clientes">...</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Tareas</span>
+                <span class="stat-value loading" id="cnt-tareas">...</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Auditoria</span>
+                <span class="stat-value loading" id="cnt-auditoria">...</span>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn-primary" id="btn-download" onclick="descargar()" disabled>
+                Descargar JSON completo
+            </button>
+            <button class="btn-secondary" onclick="window.location.reload()">
+                Actualizar contadores
+            </button>
+        </div>
+
+        <p class="notice">
+            Este archivo contiene todos los datos del servidor en formato JSON.<br>
+            Guardalo en un lugar seguro antes de cualquier migracion o actualizacion.
+        </p>
+    </div>
+
+    <script>
+        let cachedData = null;
+
+        fetch('/api/data')
+            .then(res => {
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                return res.json();
+            })
+            .then(data => {
+                cachedData = data;
+                document.getElementById('cnt-users').textContent     = (data.users     || []).length;
+                document.getElementById('cnt-clientes').textContent  = (data.clientes  || []).length;
+                document.getElementById('cnt-tareas').textContent    = (data.tareas    || []).length;
+                document.getElementById('cnt-auditoria').textContent = (data.auditoria || []).length;
+
+                ['cnt-users','cnt-clientes','cnt-tareas','cnt-auditoria'].forEach(id => {
+                    document.getElementById(id).classList.remove('loading');
+                });
+
+                document.getElementById('btn-download').disabled = false;
+            })
+            .catch(err => {
+                const el = document.getElementById('error-msg');
+                el.textContent = 'No se pudo conectar con el servidor: ' + err.message;
+                el.style.display = 'block';
+                ['cnt-users','cnt-clientes','cnt-tareas','cnt-auditoria'].forEach(id => {
+                    document.getElementById(id).textContent = '-';
+                });
+            });
+
+        function descargar() {
+            if (!cachedData) return;
+            const fecha = new Date().toISOString().split('T')[0];
+            const blob = new Blob([JSON.stringify(cachedData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'rmi-export-' + fecha + '.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+[
+  {
+    "nombre": "Empresa ABC SA",
+    "estado": "Activo",
+    "ficha": "F100",
+    "contabilidad": true,
+    "sueldos": true,
+    "impuestos": true,
+    "socioId": 1,
+    "supervisorId": 3,
+    "auxiliarId": 5
+  },
+  {
+    "nombre": "Comercial XYZ",
+    "estado": "Activo",
+    "ficha": "F101",
+    "contabilidad": true,
+    "sueldos": false,
+    "impuestos": true,
+    "socioId": 1,
+    "supervisorId": 3,
+    "auxiliarId": 6
+  },
+  {
+    "nombre": "Consultora 123",
+    "estado": "Activo",
+    "ficha": "F102",
+    "contabilidad": false,
+    "sueldos": true,
+    "impuestos": false,
+    "socioId": 2,
+    "supervisorId": 4,
+    "auxiliarId": 7
+  },
+  {
+    "nombre": "Tech Solutions",
+    "estado": "Pausado",
+    "ficha": "F103",
+    "contabilidad": true,
+    "sueldos": true,
+    "impuestos": false,
+    "socioId": 1,
+    "supervisorId": 4,
+    "auxiliarId": 8
+  }
+]

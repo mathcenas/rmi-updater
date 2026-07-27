@@ -1,0 +1,39 @@
+# Archivos de Node
+node_modules
+npm-debug.log
+
+# Datos locales (se montan como volumen)
+data/*
+!data/.gitkeep
+
+# Logs
+logs
+*.log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Documentación
+*.md
+*.txt
+!package.json
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Respaldos
+backup*
+*.backup
