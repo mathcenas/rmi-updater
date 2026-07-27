@@ -131,7 +131,7 @@ app.post('/upload', uploadAuth, (req, res) => {
     }
 
     const ts      = tsDir();
-    const destDir = path.join(UPLOAD_DIR, `${app_id}_${ts}`);
+    const destDir = path.resolve(UPLOAD_DIR, `${app_id}_${ts}`);
     fs.mkdirSync(destDir, { recursive: true });
 
     try {
@@ -157,7 +157,13 @@ app.post('/upload', uploadAuth, (req, res) => {
 
           if (!ALLOWED_FILES.has(topSegment) && !ALLOWED_DIRS.has(topSegment)) continue;
 
-          const outPath = path.join(destDir, relative);
+          // Evitar zip-slip: el destino resuelto debe quedar dentro de destDir
+          const outPath = path.resolve(destDir, relative);
+          if (outPath !== destDir && !outPath.startsWith(destDir + path.sep)) {
+            console.warn(`[upload] entrada de ZIP fuera de destino, ignorada: ${entry.entryName}`);
+            continue;
+          }
+
           fs.mkdirSync(path.dirname(outPath), { recursive: true });
           fs.writeFileSync(outPath, entry.getData());
           uploadedFiles.push(relative);

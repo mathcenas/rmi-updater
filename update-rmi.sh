@@ -97,14 +97,8 @@ for item in "$LATEST"/*; do
 done
 
 # ── Reiniciar contenedor ──────────────────────────────────────────────────────
-COMPOSE_FILE="$SCRIPT_DIR/docker-compose.yml"
-if [ -f "$COMPOSE_FILE" ]; then
-  echo "Reiniciando contenedor $CONTAINER..."
-  docker compose -f "$COMPOSE_FILE" restart "$CONTAINER" 2>&1 && RESTART_OK=true || RESTART_OK=false
-else
-  echo "AVISO: docker-compose.yml no encontrado en $SCRIPT_DIR, saltando restart."
-  RESTART_OK=false
-fi
+echo "Reiniciando contenedor $CONTAINER..."
+docker restart "$CONTAINER" 2>&1 && RESTART_OK=true || RESTART_OK=false
 
 DEPLOY_DATE=$(date '+%Y-%m-%d %H:%M:%S')
 echo ""
