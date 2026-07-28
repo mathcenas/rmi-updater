@@ -107,6 +107,19 @@
     .badge-amber { background: #fef9c3; color: #92400e; }
     .badge-gray  { background: #f1f5f9; color: #475569; }
     .badge-dir   { background: #f0fdf4; color: #15803d; }
+    .badge-red   { background: #fee2e2; color: #b91c1c; }
+
+    .container-status { display: flex; flex-wrap: wrap; gap: 10px; padding: 16px 20px; }
+    .container-pill {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border-radius: 10px; background: #f8fafc;
+      font-size: 13px; font-weight: 600; color: #334155;
+    }
+    .container-pill .dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    .container-pill .dot.running    { background: #22c55e; }
+    .container-pill .dot.exited     { background: #f59e0b; }
+    .container-pill .dot.not-found  { background: #ef4444; }
+    .container-pill .sub { font-weight: 400; color: #94a3b8; font-size: 12px; }
 
     .actions-cell { display: flex; gap: 6px; justify-content: flex-end; align-items: center; }
 
@@ -241,6 +254,17 @@
     <div class="card">
       <div class="card-header">
         <div>
+          <div class="card-title">Estado de contenedores</div>
+        </div>
+      </div>
+      <div id="containerStatus" class="container-status">
+        <span class="spinner"></span> Cargando...
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div>
           <div class="card-title">Uploads en /tmp/rmi</div>
           <div class="card-subtitle" id="fileCount">Cargando...</div>
         </div>
@@ -256,6 +280,29 @@
           </tr>
         </thead>
         <tbody id="fileTable">
+          <tr><td colspan="5" class="loader-cell"><span class="spinner"></span>Cargando...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Backups</div>
+          <div class="card-subtitle" id="backupCount">Cargando...</div>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre / Aplicacion</th>
+            <th>Ambiente</th>
+            <th>Tamaño</th>
+            <th>Fecha</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="backupTable">
           <tr><td colspan="5" class="loader-cell"><span class="spinner"></span>Cargando...</td></tr>
         </tbody>
       </table>
@@ -297,10 +344,10 @@
     </div>
   </div>
 
-  <!-- Deploy modal -->
+  <!-- Deploy / Restore modal -->
   <div class="overlay" id="deployOverlay">
     <div class="deploy-box">
-      <h3>Aplicar deploy</h3>
+      <h3 id="deployTitle">Aplicar deploy</h3>
       <div class="deploy-meta" id="deployMeta"></div>
       <div class="deploy-warn" id="deployWarn"></div>
       <div class="deploy-email-row">
@@ -321,6 +368,7 @@
     let adminPassword = '';
     let pendingDelete = null;
     let pendingDeploy = null;
+    let pendingMode   = 'deploy'; // 'deploy' | 'restore'
 
     const APP_CONFIGS = {
       gestion_prod:      { label: 'Gestion RMI',     env: 'Produccion', badgeClass: 'badge-blue'  },
@@ -361,10 +409,81 @@
           document.getElementById('mainPanel').style.display = 'block';
         }
         renderFiles(data.files || []);
+        loadContainerStatus();
+        loadBackups();
       } catch (e) {
         if (fromLogin) showLoginAlert('Error de conexion: ' + e.message);
         else showMainAlert('error', 'Error al cargar: ' + e.message);
       }
+    }
+
+    async function loadContainerStatus() {
+      const box = document.getElementById('containerStatus');
+      try {
+        const res = await fetch('/mgmt/container-status', { headers: { 'x-admin-password': adminPassword } });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        const stateLabel = { running: 'corriendo', exited: 'detenido', 'not-found': 'no existe' };
+        box.innerHTML = Object.entries(data.containers || {}).map(([app_id, c]) => {
+          const info  = APP_CONFIGS[app_id];
+          const state = stateLabel[c.state] || c.state;
+          return `<div class="container-pill">
+            <span class="dot ${esc(c.state)}"></span>
+            ${esc(info ? info.label + (info.env === 'Testing' ? ' (Testing)' : '') : app_id)}
+            <span class="sub">${esc(c.name)} · ${esc(state)}</span>
+          </div>`;
+        }).join('');
+      } catch (e) {
+        box.innerHTML = `<span style="color:#ef4444;font-size:13px">Error al cargar estado: ${esc(e.message)}</span>`;
+      }
+    }
+
+    async function loadBackups() {
+      try {
+        const res = await fetch('/mgmt/backups', { headers: { 'x-admin-password': adminPassword } });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        renderBackups(data.backups || []);
+      } catch (e) {
+        document.getElementById('backupTable').innerHTML =
+          `<tr><td colspan="5" class="empty">Error al cargar backups: ${esc(e.message)}</td></tr>`;
+      }
+    }
+
+    function renderBackups(backups) {
+      const tbody = document.getElementById('backupTable');
+      document.getElementById('backupCount').textContent =
+        backups.length === 0 ? 'Sin backups' : `${backups.length} backup${backups.length !== 1 ? 's' : ''}`;
+
+      if (backups.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" class="empty">Todavia no se hizo ningun deploy</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = backups.map(f => {
+        const info = parseEntry(f.name);
+        const appCell = info
+          ? `<span class="badge ${info.badgeClass}">${esc(info.label)}</span>`
+          : '<span class="badge badge-gray">desconocido</span>';
+        const envCell = info
+          ? `<span class="badge ${info.env === 'Testing' ? 'badge-amber' : 'badge-green'}">${esc(info.env)}</span>`
+          : '—';
+
+        return `<tr>
+          <td>
+            <span class="file-name">${esc(f.name)}</span>
+            ${appCell}
+          </td>
+          <td>${envCell}</td>
+          <td>${esc(f.size)}</td>
+          <td>${esc(f.modified)}</td>
+          <td>
+            <div class="actions-cell">
+              ${info ? `<button class="btn btn-deploy btn-sm" onclick="askRestore('${escAttr(f.name)}')">Restaurar</button>` : ''}
+            </div>
+          </td>
+        </tr>`;
+      }).join('');
     }
 
     function parseEntry(name) {
@@ -472,32 +591,37 @@
 
     // ── Deploy ────────────────────────────────────────────────────────────────
 
-    function askDeploy(name) {
+    function askDeploy(name) { openDeployModal(name, 'deploy'); }
+    function askRestore(name) { openDeployModal(name, 'restore'); }
+
+    function openDeployModal(name, mode) {
       const info = parseEntry(name);
       if (!info) return;
       pendingDeploy = name;
+      pendingMode   = mode;
+
+      const isRestore = mode === 'restore';
+      document.getElementById('deployTitle').textContent = isRestore ? 'Restaurar backup' : 'Aplicar deploy';
 
       const meta = document.getElementById('deployMeta');
       meta.innerHTML = `
         Aplicacion: <strong>${esc(info.label)}</strong><br>
         Ambiente: <strong>${esc(info.env)}</strong><br>
-        Upload: <strong>${esc(name)}</strong>
+        ${isRestore ? 'Backup' : 'Upload'}: <strong>${esc(name)}</strong>
       `;
 
       const warn = document.getElementById('deployWarn');
-      if (info.env === 'Produccion') {
-        warn.className = 'deploy-warn prod';
-        warn.textContent = 'Esto actualizara el sistema en PRODUCCION y reiniciara el contenedor.';
-      } else {
-        warn.className = 'deploy-warn';
-        warn.textContent = 'Esto actualizara el ambiente de TESTING y reiniciara el contenedor.';
-      }
+      const target = info.env === 'Produccion' ? 'PRODUCCION' : 'TESTING';
+      warn.className = info.env === 'Produccion' ? 'deploy-warn prod' : 'deploy-warn';
+      warn.textContent = isRestore
+        ? `Esto va a sobreescribir ${target} con este backup y reiniciara el contenedor (se guarda un backup del estado actual antes de restaurar).`
+        : `Esto actualizara el sistema en ${target} y reiniciara el contenedor.`;
 
       document.getElementById('deployLog').className = 'deploy-log';
       document.getElementById('deployLog').innerHTML = '';
       document.getElementById('deployEmail').value = '';
       document.getElementById('deployConfirmBtn').disabled = false;
-      document.getElementById('deployConfirmBtn').textContent = 'Aplicar deploy';
+      document.getElementById('deployConfirmBtn').textContent = isRestore ? 'Restaurar' : 'Aplicar deploy';
       document.getElementById('deployCancelBtn').textContent = 'Cancelar';
 
       document.getElementById('deployOverlay').classList.add('open');
@@ -510,19 +634,20 @@
 
     async function confirmDeploy() {
       if (!pendingDeploy) return;
-      const name  = pendingDeploy;
-      const email = document.getElementById('deployEmail').value.trim();
+      const name      = pendingDeploy;
+      const isRestore = pendingMode === 'restore';
+      const email     = document.getElementById('deployEmail').value.trim();
 
       const btn   = document.getElementById('deployConfirmBtn');
       const logEl = document.getElementById('deployLog');
       btn.disabled = true;
-      btn.innerHTML = '<span class="spinner-sm"></span>Ejecutando...';
+      btn.innerHTML = `<span class="spinner-sm"></span>Ejecutando...`;
       logEl.className  = 'deploy-log visible';
-      logEl.textContent = 'Iniciando deploy...\n';
+      logEl.textContent = isRestore ? 'Iniciando restauracion...\n' : 'Iniciando deploy...\n';
       document.getElementById('deployCancelBtn').textContent = 'Cerrar';
 
       try {
-        const res = await fetch('/mgmt/deploy', {
+        const res = await fetch(isRestore ? '/mgmt/restore' : '/mgmt/deploy', {
           method: 'POST',
           headers: { 'x-admin-password': adminPassword, 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, email: email || undefined })
@@ -561,10 +686,10 @@
         }
 
         if (finalStatus?.ok) {
-          logEl.textContent += '\n✓ Deploy completado exitosamente.';
+          logEl.textContent += isRestore ? '\n✓ Restauracion completada exitosamente.' : '\n✓ Deploy completado exitosamente.';
           logEl.scrollTop = logEl.scrollHeight;
-          btn.textContent = 'Deploy aplicado';
-          showMainAlert('success', `Deploy aplicado: ${name}`);
+          btn.textContent = isRestore ? 'Restaurado' : 'Deploy aplicado';
+          showMainAlert('success', isRestore ? `Backup restaurado: ${name}` : `Deploy aplicado: ${name}`);
           loadFiles();
         } else {
           logEl.textContent += `\n✗ Error (codigo ${finalStatus?.code ?? '?'})`;
