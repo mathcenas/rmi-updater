@@ -87,12 +87,29 @@ app.get('/api/:collection', (req, res) => {
     }
 });
 
+// Colecciones críticas que no pueden sobreescribirse con array vacío si ya tienen datos
+const PROTECTED_COLLECTIONS = ['tareas', 'auditoria'];
+
+function isDestructiveWipe(collection, newData, existingData) {
+    return PROTECTED_COLLECTIONS.includes(collection)
+        && Array.isArray(newData)
+        && newData.length === 0
+        && Array.isArray(existingData[collection])
+        && existingData[collection].length > 0;
+}
+
 // POST - Actualizar colección completa
 app.post('/api/:collection', (req, res) => {
     const { collection } = req.params;
     const newData = req.body;
 
     const data = readDB();
+
+    if (isDestructiveWipe(collection, newData, data)) {
+        console.warn(`[BLOQUEADO] Intento de vaciar '${collection}' (${data[collection].length} registros protegidos)`);
+        return res.status(400).json({ error: `No se puede vaciar la colección '${collection}' que ya contiene datos` });
+    }
+
     data[collection] = newData;
 
     if (writeDB(data)) {
@@ -107,9 +124,19 @@ app.post('/api/batch', (req, res) => {
     const updates = req.body;
     const data = readDB();
 
+    let blocked = false;
     Object.keys(updates).forEach(collection => {
+        if (isDestructiveWipe(collection, updates[collection], data)) {
+            console.warn(`[BLOQUEADO] Batch: intento de vaciar '${collection}' (${data[collection].length} registros protegidos)`);
+            blocked = true;
+            return;
+        }
         data[collection] = updates[collection];
     });
+
+    if (blocked) {
+        return res.status(400).json({ error: "No se puede vaciar una colección que ya contiene datos" });
+    }
 
     if (writeDB(data)) {
         res.json({ success: true });
