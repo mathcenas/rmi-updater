@@ -1,0 +1,3894 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nombre": "Leo",
+      "email": "lrodriguez@rmiconsultores.com",
+      "password": "123",
+      "rol": "Socio",
+      "activo": true
+    },
+    {
+      "id": 2,
+      "nombre": "Ana",
+      "email": "airiarte@rmiconsultores.com",
+      "password": "123",
+      "rol": "Socio",
+      "activo": true
+    },
+    {
+      "id": 3,
+      "nombre": "Monica",
+      "email": "mmesorio@rmiconsultores.com",
+      "password": "123",
+      "rol": "Supervisor",
+      "activo": true
+    },
+    {
+      "id": 4,
+      "nombre": "Cintia",
+      "email": "csalvatierra@rmiconsultores.com",
+      "password": "123",
+      "rol": "Supervisor",
+      "activo": true
+    },
+    {
+      "id": 5,
+      "nombre": "Monica Rosa",
+      "email": "mrosa@rmiconsultores.com",
+      "password": "123",
+      "rol": "Auxiliar",
+      "activo": true
+    },
+    {
+      "id": 6,
+      "nombre": "Camila",
+      "email": "ccraigdallie@rmiconsultores.com",
+      "password": "123",
+      "rol": "Supervisor",
+      "activo": true
+    },
+    {
+      "id": 7,
+      "nombre": "Carmiña",
+      "email": "czeballos@rmiconsultores.com",
+      "password": "123",
+      "rol": "Auxiliar",
+      "activo": true
+    },
+    {
+      "id": 8,
+      "nombre": "Nicole",
+      "email": "nmedina@rmiconsultores.com",
+      "password": "123",
+      "rol": "Auxiliar",
+      "activo": true
+    }
+  ],
+  "clientes": [
+    {
+      "id": 999,
+      "nombre": "GENERAL",
+      "estado": "Activo",
+      "ficha": "F999",
+      "servicios": {
+        "contabilidad": false,
+        "sueldos": false,
+        "impuestos": false,
+        "regimenInformativo": "N/A"
+      },
+      "socioId": 1,
+      "supervisorId": 1,
+      "auxiliarId": 1,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "",
+        "usuarioBPS": "",
+        "claveBPS": "",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": ""
+      }
+    },
+    {
+      "id": 1,
+      "nombre": "ABE",
+      "estado": "Activo",
+      "ficha": "F0001",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "",
+        "usuarioBPS": "",
+        "claveBPS": "",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "216595710017"
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "ATEU",
+      "estado": "Activo",
+      "ficha": "F0002",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7838723",
+        "usuarioBPS": "",
+        "claveBPS": "45671521",
+        "ciCliente": "G2Oo%QqmXg6#",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219110000000"
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Alejandra Lugo ",
+      "estado": "Activo",
+      "ficha": "F0003",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 3,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "3122678",
+        "usuarioBPS": "42695633",
+        "claveBPS": "Alej1234",
+        "ciCliente": "42695633",
+        "usuarioGub": "ALElu1262",
+        "claveGub": "Usuario Ana",
+        "claveCJPPU": "",
+        "rut": "42695633"
+      }
+    },
+    {
+      "id": 4,
+      "nombre": "Lorena Clavijo ",
+      "estado": "Activo",
+      "ficha": "F0004",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 3,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7297877",
+        "usuarioBPS": "47312965",
+        "claveBPS": "Lore1234",
+        "ciCliente": "47312965",
+        "usuarioGub": "Lore1234.",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218598020018"
+      }
+    },
+    {
+      "id": 5,
+      "nombre": "Pablo Flores",
+      "estado": "Inactivo",
+      "ficha": "F0005",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "3597015",
+        "usuarioBPS": "33403370",
+        "claveBPS": "CyhGQcg7",
+        "ciCliente": "33403370",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "No sabemos",
+        "rut": "213337800019"
+      }
+    },
+    {
+      "id": 6,
+      "nombre": "Lucia Oliveira : RENOVAR EXONERACION ANTES DEL 2/10/2026",
+      "estado": "Activo",
+      "ficha": "F0006",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7330964",
+        "usuarioBPS": "48013356",
+        "claveBPS": "Oliveira3356",
+        "ciCliente": "48013356",
+        "usuarioGub": "48013356",
+        "claveGub": "ramonanador3308",
+        "claveCJPPU": " - ",
+        "rut": "218631700019"
+      }
+    },
+    {
+      "id": 7,
+      "nombre": "ACHI SRL",
+      "estado": "Activo",
+      "ficha": "F0007",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "3831602",
+        "usuarioBPS": "29266051",
+        "claveBPS": "Achi29266051",
+        "ciCliente": "29266051",
+        "usuarioGub": "ACHI123.",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "160168040018"
+      }
+    },
+    {
+      "id": 8,
+      "nombre": "Agustin Iriarte : Depende facturacón - no aplic CCM  -   - Msj SI E 3/3/25",
+      "estado": "Activo",
+      "ficha": "F0008",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 3,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6393415",
+        "usuarioBPS": "40640711",
+        "claveBPS": "Polola27",
+        "ciCliente": "40640711",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "cabalo8721",
+        "rut": "160297330012"
+      }
+    },
+    {
+      "id": 9,
+      "nombre": "Beatriz Chelle",
+      "estado": "Activo",
+      "ficha": "F0009",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "1582695",
+        "usuarioBPS": "11820211",
+        "claveBPS": "bPS123..",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": ""
+      }
+    },
+    {
+      "id": 10,
+      "nombre": "Enrique Iriarte : Depende facturacón - no aplic CCM - Msj SI E 3/3/25",
+      "estado": "Activo",
+      "ficha": "F0010",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 3,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6600226",
+        "usuarioBPS": "42752001",
+        "claveBPS": "Polola27",
+        "ciCliente": "42752001",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "rivera560",
+        "rut": "160315800011"
+      }
+    },
+    {
+      "id": 11,
+      "nombre": "HFT SAS - INACTIVA",
+      "estado": "Inactivo",
+      "ficha": "F0011",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7394145",
+        "usuarioBPS": "41803205",
+        "claveBPS": "e1c4RunCH0",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218692420016"
+      }
+    },
+    {
+      "id": 12,
+      "nombre": "Maximiliano Daniel",
+      "estado": "Inactivo",
+      "ficha": "F0012",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7697277",
+        "usuarioBPS": "65070872",
+        "claveBPS": "*Maxi22095710",
+        "ciCliente": "65070872",
+        "usuarioGub": "Calabria3969",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218985540015"
+      }
+    },
+    {
+      "id": 13,
+      "nombre": "Montelan SA",
+      "estado": "Activo",
+      "ficha": "F0013",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "431035",
+        "usuarioBPS": "11998476",
+        "claveBPS": "Montelan2021",
+        "ciCliente": "11998476",
+        "usuarioGub": "11998476",
+        "claveGub": "donbaez2022.",
+        "claveCJPPU": "",
+        "rut": "210203120019"
+      }
+    },
+    {
+      "id": 14,
+      "nombre": "CLADE SA ",
+      "estado": "Activo",
+      "ficha": "F0014",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "",
+        "usuarioBPS": "",
+        "claveBPS": "",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "211677720015"
+      }
+    },
+    {
+      "id": 15,
+      "nombre": "Diego Oliveri",
+      "estado": "Activo",
+      "ficha": "F0015",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7701029",
+        "usuarioBPS": "41128376",
+        "claveBPS": "7mWfdy92",
+        "ciCliente": "41128376",
+        "usuarioGub": "7mWfdy92",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218989610018"
+      }
+    },
+    {
+      "id": 16,
+      "nombre": "Ynel",
+      "estado": "Activo",
+      "ficha": "F0016",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 6,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "1867447",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "MXT6ajy-wve1ehp.bju",
+        "rut": "212176670013"
+      }
+    },
+    {
+      "id": 17,
+      "nombre": "Claudia Weiss",
+      "estado": "Activo",
+      "ficha": "F0017",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "",
+        "usuarioBPS": "",
+        "claveBPS": "",
+        "ciCliente": "11998476",
+        "usuarioGub": "donbaez2022",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "213134760012"
+      }
+    },
+    {
+      "id": 18,
+      "nombre": "Diana Weiss",
+      "estado": "Activo",
+      "ficha": "F0018",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "",
+        "usuarioBPS": "11997604",
+        "claveBPS": "4YhH2k72",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "213259810015"
+      }
+    },
+    {
+      "id": 19,
+      "nombre": "Ivanel",
+      "estado": "Activo",
+      "ficha": "F0019",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "3757886",
+        "usuarioBPS": "45427673",
+        "claveBPS": "Lahostaria1728",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "211677720015"
+      }
+    },
+    {
+      "id": 20,
+      "nombre": "Rodrigo Berenguer",
+      "estado": "Activo",
+      "ficha": "F0020",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7190795",
+        "usuarioBPS": "41803205",
+        "claveBPS": "e1c4RunCH0",
+        "ciCliente": "41803205",
+        "usuarioGub": "roro2025",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218479290011"
+      }
+    },
+    {
+      "id": 21,
+      "nombre": "Angelina Vignolo + Alternativo (SD)",
+      "estado": "Activo",
+      "ficha": "F0021",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7947365",
+        "usuarioBPS": "37049253",
+        "claveBPS": "Diaguito15!",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": ""
+      }
+    },
+    {
+      "id": 22,
+      "nombre": "Alfredo Baeza",
+      "estado": "Activo",
+      "ficha": "F0022",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "3541239",
+        "usuarioBPS": "14976704",
+        "claveBPS": "señaBPS1111",
+        "ciCliente": "45023732",
+        "usuarioGub": "3969*Calabria",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "212782320011"
+      }
+    },
+    {
+      "id": 23,
+      "nombre": "EFFIZA - Daticana S.R.L.",
+      "estado": "Activo",
+      "ficha": "F0023",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6933936",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "218153950019"
+      }
+    },
+    {
+      "id": 24,
+      "nombre": "Rodrigo Viera / Effiza",
+      "estado": "Activo",
+      "ficha": "F0024",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7745713",
+        "usuarioBPS": "49379800",
+        "claveBPS": "Rodrigo1998",
+        "ciCliente": "45023732",
+        "usuarioGub": "3969*Calabria",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219027860012"
+      }
+    },
+    {
+      "id": 25,
+      "nombre": "Andres Canabal / MENSUAL",
+      "estado": "Activo",
+      "ficha": "F0025",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6704179",
+        "usuarioBPS": "31674236",
+        "claveBPS": "Canabal1234",
+        "ciCliente": "",
+        "usuarioGub": "31674236",
+        "claveGub": "1234abcd",
+        "claveCJPPU": "",
+        "rut": "217788210014"
+      }
+    },
+    {
+      "id": 26,
+      "nombre": "MARIA NOEL ARMAS",
+      "estado": "Activo",
+      "ficha": "F0026",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6630349",
+        "usuarioBPS": "48275845",
+        "claveBPS": "Ninguna1",
+        "ciCliente": "48275845",
+        "usuarioGub": "Ninguna.1",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "217677270019"
+      }
+    },
+    {
+      "id": 27,
+      "nombre": "Club del Inversor ",
+      "estado": "Activo",
+      "ficha": "F0027",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7295636",
+        "usuarioBPS": "45971602",
+        "claveBPS": "",
+        "ciCliente": "45971602",
+        "usuarioGub": "laparedesroja21",
+        "claveGub": "info@clubdelinversor.uy",
+        "claveCJPPU": "CHUPATE.ESA.MANDARINA",
+        "rut": "218596270017"
+      }
+    },
+    {
+      "id": 28,
+      "nombre": "Rodrigo Portas",
+      "estado": "Activo",
+      "ficha": "F0028",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7059290",
+        "usuarioBPS": "45644950",
+        "claveBPS": "Leomonana2019",
+        "ciCliente": "45644950",
+        "usuarioGub": "Leomonana2019",
+        "claveGub": "",
+        "claveCJPPU": "Rodrigo1",
+        "rut": "218323510014"
+      }
+    },
+    {
+      "id": 29,
+      "nombre": "Nicolas Rosa",
+      "estado": "Activo",
+      "ficha": "F0029",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7401377",
+        "usuarioBPS": "40905771",
+        "claveBPS": "@AKELA3228ab",
+        "ciCliente": "40905771",
+        "usuarioGub": "@AKELA3228ab",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218698190012"
+      }
+    },
+    {
+      "id": 30,
+      "nombre": "Pedro Iriarte",
+      "estado": "Activo",
+      "ficha": "F0030",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "3130412",
+        "usuarioBPS": "29236494",
+        "claveBPS": "Polola27",
+        "ciCliente": "",
+        "usuarioGub": "29236494",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "160112820018"
+      }
+    },
+    {
+      "id": 31,
+      "nombre": "Siete neuronas SAS",
+      "estado": "Activo",
+      "ficha": "F0031",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6198439",
+        "usuarioBPS": "30726202",
+        "claveBPS": "zwIs2n9F",
+        "ciCliente": "30726202",
+        "usuarioGub": "zwIs2n9F",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "217029910010"
+      }
+    },
+    {
+      "id": 32,
+      "nombre": "Jacqueline Michy",
+      "estado": "Activo",
+      "ficha": "F0032",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "5378755",
+        "usuarioBPS": "18056174",
+        "claveBPS": "Jvma1511",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": ""
+      }
+    },
+    {
+      "id": 33,
+      "nombre": "Lucía Rodriguez  ",
+      "estado": "Activo",
+      "ficha": "F0033",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7555392",
+        "usuarioBPS": "45514896",
+        "claveBPS": "Luci1234",
+        "ciCliente": "45514896",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "45514896soloyo",
+        "rut": "218844460015"
+      }
+    },
+    {
+      "id": 34,
+      "nombre": "Giuliana Casaretto (Bimensual)  -",
+      "estado": "Activo",
+      "ficha": "F0034",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6469060",
+        "usuarioBPS": "46447125",
+        "claveBPS": "Giuli1995",
+        "ciCliente": "46447125",
+        "usuarioGub": "46447125",
+        "claveGub": "Cachito2025!",
+        "claveCJPPU": "Giuli1995!",
+        "rut": "130162330012"
+      }
+    },
+    {
+      "id": 35,
+      "nombre": "Daniel Silvera",
+      "estado": "Inactivo",
+      "ficha": "F0035",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7178230",
+        "usuarioBPS": "45284415",
+        "claveBPS": "Kang1234",
+        "ciCliente": "45284415",
+        "usuarioGub": "!D.bHA5n.fFP6Wd",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219064830016"
+      }
+    },
+    {
+      "id": 36,
+      "nombre": "Gonzalo Mesorio",
+      "estado": "Activo",
+      "ficha": "F0036",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "5678233",
+        "usuarioBPS": "38137653",
+        "claveBPS": "bpsGonza1234",
+        "ciCliente": "38137653",
+        "usuarioGub": "38137653",
+        "claveGub": "bpsGonza1234",
+        "claveCJPPU": "CN72##rN4m",
+        "rut": "216592440019"
+      }
+    },
+    {
+      "id": 37,
+      "nombre": "MIFINANZAS S.A.S",
+      "estado": "Activo",
+      "ficha": "F0037",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6772319",
+        "usuarioBPS": "38137653",
+        "claveBPS": "bpsGonza1234",
+        "ciCliente": "38137653",
+        "usuarioGub": "bpsGonza1234",
+        "claveGub": "",
+        "claveCJPPU": " - ",
+        "rut": "217894300013"
+      }
+    },
+    {
+      "id": 38,
+      "nombre": "MIPSPC S.A.S.",
+      "estado": "Activo",
+      "ficha": "F0038",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7563677",
+        "usuarioBPS": "38137653",
+        "claveBPS": "bpsGonza1234",
+        "ciCliente": "38137653",
+        "usuarioGub": "bpsGonza1234",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218851910012"
+      }
+    },
+    {
+      "id": 39,
+      "nombre": "MICREDITO EMPRESAS S.A.S.",
+      "estado": "Activo",
+      "ficha": "F0039",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7683335",
+        "usuarioBPS": "38137653",
+        "claveBPS": "bpsGonza1234",
+        "ciCliente": "38137653",
+        "usuarioGub": "bpsGonza1234",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218973620019"
+      }
+    },
+    {
+      "id": 40,
+      "nombre": "Paula Rodriguez (Unipersonal)",
+      "estado": "Inactivo",
+      "ficha": "F0040",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7425139",
+        "usuarioBPS": "42316160",
+        "claveBPS": "Pr8993992",
+        "ciCliente": "42316160",
+        "usuarioGub": "Paula12345",
+        "claveGub": "",
+        "claveCJPPU": "Paula1234",
+        "rut": "218721940019"
+      }
+    },
+    {
+      "id": 41,
+      "nombre": "Florencia Abreu (unipersonal MF)",
+      "estado": "Activo",
+      "ficha": "F0041",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6775473",
+        "usuarioBPS": "45554042",
+        "claveBPS": "Flor1989",
+        "ciCliente": "45554042",
+        "usuarioGub": "Flor1989",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "217899720010"
+      }
+    },
+    {
+      "id": 42,
+      "nombre": "Rafael Suarez (Unipersonal MF)",
+      "estado": "Inactivo",
+      "ficha": "F0042",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7670755",
+        "usuarioBPS": "50003983",
+        "claveBPS": "LoktarBps2806",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218961580017"
+      }
+    },
+    {
+      "id": 43,
+      "nombre": "Martin Rios (Unipersonal MF)",
+      "estado": "Inactivo",
+      "ficha": "F0043",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7670003",
+        "usuarioBPS": "51333616",
+        "claveBPS": "Martin290398",
+        "ciCliente": "51333616",
+        "usuarioGub": "Martin.-rios290398",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218961170013"
+      }
+    },
+    {
+      "id": 44,
+      "nombre": "Mónica Mesorio - NC",
+      "estado": "Activo",
+      "ficha": "F0044",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6603048",
+        "usuarioBPS": "47381780",
+        "claveBPS": "Mmonica2018",
+        "ciCliente": "47381780",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "MONICA17",
+        "rut": "217635440013"
+      }
+    },
+    {
+      "id": 45,
+      "nombre": "Alejandro Ocampo  - ",
+      "estado": "Activo",
+      "ficha": "F0045",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7090436",
+        "usuarioBPS": "58767882",
+        "claveBPS": "Abc12345678",
+        "ciCliente": "58767882",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "218359010011"
+      }
+    },
+    {
+      "id": 46,
+      "nombre": "Javier Bonifacino ",
+      "estado": "Activo",
+      "ficha": "F0046",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7154837",
+        "usuarioBPS": "20195099",
+        "claveBPS": "Deb1124Bps",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218435490015"
+      }
+    },
+    {
+      "id": 47,
+      "nombre": "Patricia Flores",
+      "estado": "Inactivo",
+      "ficha": "F0047",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7368389",
+        "usuarioBPS": "20145436",
+        "claveBPS": "Patilluda1978",
+        "ciCliente": "20145436",
+        "usuarioGub": "ApH223rt",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218667190010"
+      }
+    },
+    {
+      "id": 48,
+      "nombre": "Elias Adler",
+      "estado": "Activo",
+      "ficha": "F0048",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "1837558",
+        "usuarioBPS": "13816452",
+        "claveBPS": "Elias1960",
+        "ciCliente": " ",
+        "usuarioGub": "Elias1960adler",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "212548690010"
+      }
+    },
+    {
+      "id": 49,
+      "nombre": "Ignacio Spiess-Sofía Taurozzi  - N/C ",
+      "estado": "Inactivo",
+      "ficha": "F0049",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6759931",
+        "usuarioBPS": "",
+        "claveBPS": " - ",
+        "ciCliente": " - ",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": " -",
+        "rut": "217876390014"
+      }
+    },
+    {
+      "id": 50,
+      "nombre": "Ignacio Spiesss - N/C ",
+      "estado": "Inactivo",
+      "ficha": "F0050",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6501440",
+        "usuarioBPS": "41581700",
+        "claveBPS": "Guillemaraca1988",
+        "ciCliente": "41581700",
+        "usuarioGub": "seminario",
+        "claveGub": "",
+        "claveCJPPU": "is41581700",
+        "rut": "217400810015"
+      }
+    },
+    {
+      "id": 51,
+      "nombre": "Electric Cur SRL: BPS EN REDES DE COBRANZA  ",
+      "estado": "Activo",
+      "ficha": "F0051",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 6,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "782280",
+        "usuarioBPS": "29940180",
+        "claveBPS": "Electri2017",
+        "ciCliente": "29940180",
+        "usuarioGub": "29940180",
+        "claveGub": "Fabian25071261",
+        "claveCJPPU": "Usuario eFactura: 33204922  Clave: Bk4hOhmd",
+        "rut": "190015020012"
+      }
+    },
+    {
+      "id": 52,
+      "nombre": "FECABO SAS  N/C",
+      "estado": "Inactivo",
+      "ficha": "F0052",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7405292",
+        "usuarioBPS": "49191377",
+        "claveBPS": "Kamopasteleria24.",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218701980015"
+      }
+    },
+    {
+      "id": 53,
+      "nombre": "Graciela Silva",
+      "estado": "Activo",
+      "ficha": "F0053",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "3623645",
+        "usuarioBPS": "29107130",
+        "claveBPS": "Lucerna6175",
+        "ciCliente": "",
+        "usuarioGub": "Soca1255",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": ""
+      }
+    },
+    {
+      "id": 54,
+      "nombre": "CIRCULO DORADO - N/C ",
+      "estado": "Inactivo",
+      "ficha": "F0054",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7801148",
+        "usuarioBPS": "26487278",
+        "claveBPS": "Siro1234",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219077090016"
+      }
+    },
+    {
+      "id": 55,
+      "nombre": "Silvana Casaretto",
+      "estado": "Activo",
+      "ficha": "F0055",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7237222",
+        "usuarioBPS": "31225895",
+        "claveBPS": "31225895Sc",
+        "ciCliente": "31225895",
+        "usuarioGub": "Calabria3969",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218529330011"
+      }
+    },
+    {
+      "id": 56,
+      "nombre": "Sofía Taurozzi - N/C",
+      "estado": "Inactivo",
+      "ficha": "F0056",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6585717",
+        "usuarioBPS": "47612472",
+        "claveBPS": "St47612472",
+        "ciCliente": "47612472",
+        "usuarioGub": "Rebel001",
+        "claveGub": "",
+        "claveCJPPU": "st47612472",
+        "rut": "217607590014"
+      }
+    },
+    {
+      "id": 57,
+      "nombre": "Zelmar Sanchez Casamayor",
+      "estado": "Inactivo",
+      "ficha": "F0057",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "",
+        "usuarioBPS": "44835073",
+        "claveBPS": "Ze44835073",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": ""
+      }
+    },
+    {
+      "id": 58,
+      "nombre": "Rodrigo Alvarez",
+      "estado": "Activo",
+      "ficha": "F0058",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7295686",
+        "usuarioBPS": "30726202",
+        "claveBPS": "zwIs2n9F",
+        "ciCliente": "30726202",
+        "usuarioGub": "",
+        "claveGub": "zwIs2n9F",
+        "claveCJPPU": "",
+        "rut": "214367540013"
+      }
+    },
+    {
+      "id": 59,
+      "nombre": "Valentina de Leon",
+      "estado": "Inactivo",
+      "ficha": "F0059",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7644737",
+        "usuarioBPS": "49238294",
+        "claveBPS": "Macarena753",
+        "ciCliente": "49238294",
+        "usuarioGub": "Valu1336",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218940080015"
+      }
+    },
+    {
+      "id": 60,
+      "nombre": "Gimena Blanco",
+      "estado": "Activo",
+      "ficha": "F0060",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "5236581",
+        "usuarioBPS": "40636217",
+        "claveBPS": "Blanco+2020",
+        "ciCliente": "40636217",
+        "usuarioGub": "Calabria3969",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "216401410012"
+      }
+    },
+    {
+      "id": 61,
+      "nombre": "Fernando Lancieri",
+      "estado": "Activo",
+      "ficha": "F0061",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "4999832",
+        "usuarioBPS": "29239349",
+        "claveBPS": "JUANMAlancieri2020",
+        "ciCliente": "29239349",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "130125590014"
+      }
+    },
+    {
+      "id": 62,
+      "nombre": "IXALAB SAS  - N/C",
+      "estado": "Inactivo",
+      "ficha": "F0062",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7843440",
+        "usuarioBPS": "41902996",
+        "claveBPS": "Balta2017",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219114580018"
+      }
+    },
+    {
+      "id": 63,
+      "nombre": "Ivan Amaro ",
+      "estado": "Inactivo",
+      "ficha": "F0063",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7936552",
+        "usuarioBPS": "51983908",
+        "claveBPS": "Gonzalo1987.",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219204880010"
+      }
+    },
+    {
+      "id": 64,
+      "nombre": "Ingrid Spiess / Domestico",
+      "estado": "Activo",
+      "ficha": "F0064",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7056477",
+        "usuarioBPS": "37046574",
+        "claveBPS": "Is37046574",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": ""
+      }
+    },
+    {
+      "id": 65,
+      "nombre": "Fernando Johann",
+      "estado": "Activo",
+      "ficha": "F0065",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7928462",
+        "usuarioBPS": "64941915",
+        "claveBPS": "BPS0%Fun",
+        "ciCliente": "45023732",
+        "usuarioGub": "Calabria3969*",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219197950012"
+      }
+    },
+    {
+      "id": 66,
+      "nombre": "Ingrid Spiess unipersonal",
+      "estado": "Activo",
+      "ficha": "F0066",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "5790556",
+        "usuarioBPS": "37046574",
+        "claveBPS": "Is37046574",
+        "ciCliente": "37046574",
+        "usuarioGub": "IS180284",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "216780330012"
+      }
+    },
+    {
+      "id": 67,
+      "nombre": "Clinica carrasco /Ingrid",
+      "estado": "Activo",
+      "ficha": "F0067",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7782818",
+        "usuarioBPS": "37046574",
+        "claveBPS": "Is37046574",
+        "ciCliente": "37046574",
+        "usuarioGub": "IS180284",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219060040010"
+      }
+    },
+    {
+      "id": 68,
+      "nombre": "Tamara Nabel ",
+      "estado": "Activo",
+      "ficha": "F0068",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7586647",
+        "usuarioBPS": "64895992",
+        "claveBPS": "31897101Dni",
+        "ciCliente": "64895992",
+        "usuarioGub": "31897101dni",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218919710013"
+      }
+    },
+    {
+      "id": 69,
+      "nombre": "Gerales SRL",
+      "estado": "Inactivo",
+      "ficha": "F0069",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7690625",
+        "usuarioBPS": "46752679",
+        "claveBPS": "Jcorrales1810",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218980390015"
+      }
+    },
+    {
+      "id": 70,
+      "nombre": "ATRES SAS ",
+      "estado": "Activo",
+      "ficha": "F0070",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7965354",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "44789351",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "CI Federico 39650709 - Quijano1290",
+        "rut": "219235730010"
+      }
+    },
+    {
+      "id": 71,
+      "nombre": "Metacortex SAS :  N/C",
+      "estado": "Inactivo",
+      "ficha": "F0071",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8031802",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "44789351",
+        "usuarioGub": "45023732",
+        "claveGub": "claveleo",
+        "claveCJPPU": "",
+        "rut": "219296470019"
+      }
+    },
+    {
+      "id": 72,
+      "nombre": "Bruno Franco  SAS   ",
+      "estado": "Activo",
+      "ficha": "F0072",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 3,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8054180",
+        "usuarioBPS": "48903771",
+        "claveBPS": "Br48903771",
+        "ciCliente": "48903771",
+        "usuarioGub": "Calabria3969",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219315300012"
+      }
+    },
+    {
+      "id": 73,
+      "nombre": "Timata sas",
+      "estado": "Activo",
+      "ficha": "F0073",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "",
+        "usuarioBPS": "52159704",
+        "claveBPS": "Lucerna6175",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219324070016"
+      }
+    },
+    {
+      "id": 74,
+      "nombre": "Alexia Schuch",
+      "estado": "Activo",
+      "ficha": "F0074",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8632502",
+        "usuarioBPS": "47527495",
+        "claveBPS": "Lucerna6175",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": ""
+      }
+    },
+    {
+      "id": 75,
+      "nombre": "Somos Soluciones SAS",
+      "estado": "Activo",
+      "ficha": "F0075",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "",
+        "usuarioBPS": "7DO23522313",
+        "claveBPS": "Somossoluciones2838",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219195360013"
+      }
+    },
+    {
+      "id": 76,
+      "nombre": "ROOD SAS",
+      "estado": "Activo",
+      "ficha": "F0076",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8067208",
+        "usuarioBPS": "19906407",
+        "claveBPS": "123Oerth",
+        "ciCliente": "19906407",
+        "usuarioGub": "123Oerth",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219327090018"
+      }
+    },
+    {
+      "id": 77,
+      "nombre": "Agustin Vazquez",
+      "estado": "Inactivo",
+      "ficha": "F0077",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8093204",
+        "usuarioBPS": "48979588",
+        "claveBPS": "Agvz7811",
+        "ciCliente": "48979588",
+        "usuarioGub": "Agvz7811",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219347760019"
+      }
+    },
+    {
+      "id": 78,
+      "nombre": "FELGOR SRL",
+      "estado": "Activo",
+      "ficha": "F0078",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7336136",
+        "usuarioBPS": "38983727",
+        "claveBPS": "Volvo995299",
+        "ciCliente": "38983727",
+        "usuarioGub": "felgor995299",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218637470015"
+      }
+    },
+    {
+      "id": 79,
+      "nombre": "Vertical Media SAS",
+      "estado": "Inactivo",
+      "ficha": "F0079",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8130981",
+        "usuarioBPS": "48301038",
+        "claveBPS": "Vertical2023",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219377620010"
+      }
+    },
+    {
+      "id": 80,
+      "nombre": "Federico Franco  ",
+      "estado": "Activo",
+      "ficha": "F0080",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8161926",
+        "usuarioBPS": "46023852",
+        "claveBPS": "federico.BPS.2022.catar",
+        "ciCliente": "46023852",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "219402510015"
+      }
+    },
+    {
+      "id": 81,
+      "nombre": "Mauricio Machado ",
+      "estado": "Activo",
+      "ficha": "F0081",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "",
+        "usuarioBPS": "",
+        "claveBPS": "",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "34416229"
+      }
+    },
+    {
+      "id": 82,
+      "nombre": "Panadería José Ignacio CEDE  ",
+      "estado": "Activo",
+      "ficha": "F0082",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7076517",
+        "usuarioBPS": "38769840",
+        "claveBPS": "sugbon-Karne0-caznat",
+        "ciCliente": "38769840",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "Clave Getnet: https://comercios.getnet.com.uy/ClientPortalGNUY/login",
+        "rut": "100796620012"
+      }
+    },
+    {
+      "id": 83,
+      "nombre": "Marcela Oksengendler",
+      "estado": "Activo",
+      "ficha": "F0083",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8306696",
+        "usuarioBPS": "64992516",
+        "claveBPS": "Marcelita_05",
+        "ciCliente": "64992516",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "219515090011"
+      }
+    },
+    {
+      "id": 84,
+      "nombre": "DDTEC",
+      "estado": "Activo",
+      "ficha": "F0084",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7206709",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "45023732",
+        "usuarioGub": "3969*Calabria",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218496760012"
+      }
+    },
+    {
+      "id": 85,
+      "nombre": "Enrico Pacello SAS",
+      "estado": "Activo",
+      "ficha": "F0085",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8179730",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "45023732",
+        "usuarioGub": "3969*Calabria",
+        "claveGub": "43726924 C.I cliente ",
+        "claveCJPPU": "",
+        "rut": "219416840012"
+      }
+    },
+    {
+      "id": 86,
+      "nombre": "1026 SAS",
+      "estado": "Activo",
+      "ficha": "F0086",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8182807",
+        "usuarioBPS": "27203902",
+        "claveBPS": "Leolaz13",
+        "ciCliente": "45023732",
+        "usuarioGub": "3969*Calabria",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219419270012"
+      }
+    },
+    {
+      "id": 87,
+      "nombre": "Gimena Alvares",
+      "estado": "Inactivo",
+      "ficha": "F0087",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8151008",
+        "usuarioBPS": "51113127",
+        "claveBPS": "Unalunanueva12",
+        "ciCliente": "45023732",
+        "usuarioGub": "Calabria3969*",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219392810011"
+      }
+    },
+    {
+      "id": 88,
+      "nombre": "CAPUTTO PAOLA",
+      "estado": "Inactivo",
+      "ficha": "F0088",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "",
+        "usuarioBPS": "",
+        "claveBPS": "",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "218232270010"
+      }
+    },
+    {
+      "id": 89,
+      "nombre": "PATRICIA FERNANDEZ",
+      "estado": "Inactivo",
+      "ficha": "F0089",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8255380",
+        "usuarioBPS": "50137667",
+        "claveBPS": "Fernandez_0406!",
+        "ciCliente": "45023732",
+        "usuarioGub": "Calabria3969*",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219482110019"
+      }
+    },
+    {
+      "id": 90,
+      "nombre": "Joaquin Gonzalez ",
+      "estado": "Inactivo",
+      "ficha": "F0090",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8296198",
+        "usuarioBPS": "50087143",
+        "claveBPS": "Joaquin2025!",
+        "ciCliente": "45023732",
+        "usuarioGub": "Calabria3969*",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219506000013"
+      }
+    },
+    {
+      "id": 91,
+      "nombre": "Juan Echague Ratti",
+      "estado": "Activo",
+      "ficha": "F0091",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8311095",
+        "usuarioBPS": "7DO40152426",
+        "claveBPS": "Je_40152426",
+        "ciCliente": "66555560",
+        "usuarioGub": "Kuro_Neko97",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219518430018"
+      }
+    },
+    {
+      "id": 92,
+      "nombre": "INVERSIA SRL (Distrigol) CEDE ",
+      "estado": "Activo",
+      "ficha": "F0092",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6397675",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "30557687",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "217313880015"
+      }
+    },
+    {
+      "id": 93,
+      "nombre": "JLM TRANSPORTES ",
+      "estado": "Activo",
+      "ficha": "F0093",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7210248",
+        "usuarioBPS": "29241083",
+        "claveBPS": "Jorge29241083",
+        "ciCliente": "45023732",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "218500770013"
+      }
+    },
+    {
+      "id": 94,
+      "nombre": "MILTON RODRIGUEZ SAS",
+      "estado": "Inactivo",
+      "ficha": "F0094",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8282435",
+        "usuarioBPS": "34249022",
+        "claveBPS": "Passw0rd!",
+        "ciCliente": "34249022",
+        "usuarioGub": "Passw0rd!",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219494840017"
+      }
+    },
+    {
+      "id": 95,
+      "nombre": "SAIFA SAS (ya no se saca factura BPS, no corresponde)",
+      "estado": "Activo",
+      "ficha": "F0095",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8283224",
+        "usuarioBPS": "33388811",
+        "claveBPS": "Bps2018!",
+        "ciCliente": "33388811",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "190329910010"
+      }
+    },
+    {
+      "id": 96,
+      "nombre": "FANAMA SAS ",
+      "estado": "Inactivo",
+      "ficha": "F0096",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8266254",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "45520279",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "219489270011"
+      }
+    },
+    {
+      "id": 97,
+      "nombre": "IKIGAI URUGUAY SAS ",
+      "estado": "Activo",
+      "ficha": "F0097",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8334552",
+        "usuarioBPS": "64992390",
+        "claveBPS": "MarceUy15",
+        "ciCliente": "45023732",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "219539670018"
+      }
+    },
+    {
+      "id": 98,
+      "nombre": "TELL Toolkit SAS  ",
+      "estado": "Activo",
+      "ficha": "F0098",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8202546",
+        "usuarioBPS": "64941915",
+        "claveBPS": "BPS0%Fun",
+        "ciCliente": "44789351",
+        "usuarioGub": "claveleo",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219437730011"
+      }
+    },
+    {
+      "id": 99,
+      "nombre": "Vicnic (Tarjeta Celeste) + Conv DGI 1",
+      "estado": "Activo",
+      "ficha": "F0099",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "5869628",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "45023732",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "216821380019"
+      }
+    },
+    {
+      "id": 100,
+      "nombre": "Debora Pirez",
+      "estado": "Activo",
+      "ficha": "F0100",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8436479",
+        "usuarioBPS": "49211591",
+        "claveBPS": "P636D17d",
+        "ciCliente": "49211591",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "219624330013"
+      }
+    },
+    {
+      "id": 101,
+      "nombre": "Lucia Lacoste",
+      "estado": "Inactivo",
+      "ficha": "F0101",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8444647",
+        "usuarioBPS": "47698812",
+        "claveBPS": "Pepe2609",
+        "ciCliente": "45023732",
+        "usuarioGub": "Calabria3969*",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219631850019"
+      }
+    },
+    {
+      "id": 102,
+      "nombre": "Valentina Lacoste",
+      "estado": "Inactivo",
+      "ficha": "F0102",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8083203",
+        "usuarioBPS": "46615780",
+        "claveBPS": "Vale46615780",
+        "ciCliente": "45023732",
+        "usuarioGub": "Calabria3969*",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219340380016"
+      }
+    },
+    {
+      "id": 103,
+      "nombre": "Apa Films SAS",
+      "estado": "Activo",
+      "ficha": "F0103",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8494321",
+        "usuarioBPS": "47034888",
+        "claveBPS": "123EnzoBPS",
+        "ciCliente": "",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "219672230015"
+      }
+    },
+    {
+      "id": 104,
+      "nombre": "Kostumo SRL ",
+      "estado": "Inactivo",
+      "ficha": "F0104",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6941339",
+        "usuarioBPS": "19065168",
+        "claveBPS": "Gatus1211",
+        "ciCliente": "19065168",
+        "usuarioGub": "19065168",
+        "claveGub": "Emipal1729",
+        "claveCJPPU": "",
+        "rut": "218166980019"
+      }
+    },
+    {
+      "id": 105,
+      "nombre": "Emipal SA  ",
+      "estado": "Inactivo",
+      "ficha": "F0105",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "4953476",
+        "usuarioBPS": "19065168",
+        "claveBPS": "Gatus1211",
+        "ciCliente": "19065168",
+        "usuarioGub": "19065168",
+        "claveGub": "Emipal1729",
+        "claveCJPPU": "",
+        "rut": "215520280017"
+      }
+    },
+    {
+      "id": 106,
+      "nombre": "Daniel Saks",
+      "estado": "Activo",
+      "ficha": "F0106",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8620862",
+        "usuarioBPS": "18307094",
+        "claveBPS": "Valen6921",
+        "ciCliente": "44789351",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "petoto2050",
+        "rut": "214593290014"
+      }
+    },
+    {
+      "id": 107,
+      "nombre": "Valeria Rodriguez ",
+      "estado": "Activo",
+      "ficha": "F0107",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7882668",
+        "usuarioBPS": "42123264",
+        "claveBPS": "Kissy-9999",
+        "ciCliente": "42123264",
+        "usuarioGub": "42123264",
+        "claveGub": "vale9999",
+        "claveCJPPU": "N/C",
+        "rut": "150701990018"
+      }
+    },
+    {
+      "id": 108,
+      "nombre": "Martin Faccio ",
+      "estado": "Activo",
+      "ficha": "F0108",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8624970",
+        "usuarioBPS": "47825669",
+        "claveBPS": "Martin24FP",
+        "ciCliente": "47825669",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "GUBmartinfaccio",
+        "rut": "219829590017"
+      }
+    },
+    {
+      "id": 109,
+      "nombre": "Crusidal SA ",
+      "estado": "Activo",
+      "ficha": "F0109",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 6,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8578125",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "45023732",
+        "usuarioGub": "Calabria3969*",
+        "claveGub": "30868577",
+        "claveCJPPU": "GermanS120766",
+        "rut": "218312690016"
+      }
+    },
+    {
+      "id": 110,
+      "nombre": "Juan Peyro",
+      "estado": "Activo",
+      "ficha": "F0110",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8367151",
+        "usuarioBPS": "44125753",
+        "claveBPS": "Mantaras159951",
+        "ciCliente": "",
+        "usuarioGub": "44125753",
+        "claveGub": "",
+        "claveCJPPU": "Almendra159951",
+        "rut": "219568400015"
+      }
+    },
+    {
+      "id": 111,
+      "nombre": "Casben SAS ",
+      "estado": "Activo",
+      "ficha": "F0111",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8385176",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "41803205",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "Calabria3969",
+        "rut": "219581070015"
+      }
+    },
+    {
+      "id": 112,
+      "nombre": "Andrea Mesorio  Profesional ",
+      "estado": "Inactivo",
+      "ficha": "F0112",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8636273",
+        "usuarioBPS": "41002653",
+        "claveBPS": "Ames1988",
+        "ciCliente": "41002653",
+        "usuarioGub": "41002653",
+        "claveGub": "Ames.1988",
+        "claveCJPPU": "Ames1988",
+        "rut": "219849250017"
+      }
+    },
+    {
+      "id": 113,
+      "nombre": "Sintonia Comunidad SAS ",
+      "estado": "Inactivo",
+      "ficha": "F0113",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8583348",
+        "usuarioBPS": "45357551",
+        "claveBPS": "Punta1289",
+        "ciCliente": "45357551",
+        "usuarioGub": "47381780",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219757480016"
+      }
+    },
+    {
+      "id": 114,
+      "nombre": "Marcos Legelen: Serv. Dom Electric Cur : BPS EN REDES DE COBRANZA",
+      "estado": "Activo",
+      "ficha": "F0114",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7478218",
+        "usuarioBPS": "27931543",
+        "claveBPS": "MarcosL1980",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": ""
+      }
+    },
+    {
+      "id": 115,
+      "nombre": "Giuliana Casaretto Serv. Doméstico",
+      "estado": "Activo",
+      "ficha": "F0115",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8471589",
+        "usuarioBPS": "46447125",
+        "claveBPS": "Giuli1995",
+        "ciCliente": "46447125",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "0"
+      }
+    },
+    {
+      "id": 116,
+      "nombre": "Alberto Fabian Legelen - Serv. Dom Electric Cur : BPS EN REDES DE COBRANZA",
+      "estado": "Activo",
+      "ficha": "F0116",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6598471",
+        "usuarioBPS": "29940180",
+        "claveBPS": "Electri2017",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": ""
+      }
+    },
+    {
+      "id": 117,
+      "nombre": "TRUE CONNECT - Martin Bassi ",
+      "estado": "Activo",
+      "ficha": "F0117",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "||",
+        "usuarioBPS": "Tuid Antel ",
+        "claveBPS": "",
+        "ciCliente": "65827906",
+        "usuarioGub": "Tuid Antel ",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "220080570019"
+      }
+    },
+    {
+      "id": 118,
+      "nombre": "ELOGIQ - Emilio Machado ",
+      "estado": "Activo",
+      "ficha": "F0118",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8725555",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "51457080",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "220076880017"
+      }
+    },
+    {
+      "id": 119,
+      "nombre": "Pablo Flores  - Cerro Unipersonal fecha 31/01/2025",
+      "estado": "Inactivo",
+      "ficha": "F0119",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "3597015",
+        "usuarioBPS": "33403370",
+        "claveBPS": "CyhGQcg7",
+        "ciCliente": "33403370",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "pflores2@gmail.com",
+        "rut": "213337800019"
+      }
+    },
+    {
+      "id": 120,
+      "nombre": "CMK S.R.L",
+      "estado": "Inactivo",
+      "ficha": "F0120",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6903236",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "18721282",
+        "usuarioGub": "18721282",
+        "claveGub": "NAN187be+",
+        "claveCJPPU": "",
+        "rut": "218106780013"
+      }
+    },
+    {
+      "id": 121,
+      "nombre": "MARTIN  GIRALDI VARELA SEGUROS",
+      "estado": "Activo",
+      "ficha": "F0121",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "6916106",
+        "usuarioBPS": "44393017",
+        "claveBPS": "Martin1989",
+        "ciCliente": "44393017",
+        "usuarioGub": "Martin-1989",
+        "claveGub": "Usuario Ana",
+        "claveCJPPU": "",
+        "rut": "218127520010"
+      }
+    },
+    {
+      "id": 122,
+      "nombre": "Agilix SAS  ",
+      "estado": "Activo",
+      "ficha": "F0122",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8761559",
+        "usuarioBPS": "33403370",
+        "claveBPS": "CyhGQcg7",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "220139430013"
+      }
+    },
+    {
+      "id": 123,
+      "nombre": "Luis Alberto Iriarte",
+      "estado": "Activo",
+      "ficha": "F0123",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "G0000000100223",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "37060225",
+        "usuarioGub": "",
+        "claveGub": "juancruz2024",
+        "claveCJPPU": "",
+        "rut": "160023390018"
+      }
+    },
+    {
+      "id": 124,
+      "nombre": "Esther Barizo ",
+      "estado": "Activo",
+      "ficha": "F0124",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7109368",
+        "usuarioBPS": "4521402",
+        "claveBPS": "Esther1924",
+        "ciCliente": "4521402",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "Cclara2013",
+        "rut": "216421400012"
+      }
+    },
+    {
+      "id": 125,
+      "nombre": "Joaquin Garcia SD",
+      "estado": "Activo",
+      "ficha": "F0125",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8243607",
+        "usuarioBPS": "43926235",
+        "claveBPS": "Joaquin2025!",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": ""
+      }
+    },
+    {
+      "id": 126,
+      "nombre": "EMK",
+      "estado": "Inactivo",
+      "ficha": "F0126",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8331229",
+        "usuarioBPS": "18721282",
+        "claveBPS": "Antonella$1",
+        "ciCliente": "",
+        "usuarioGub": "18721282",
+        "claveGub": "NAN187be+",
+        "claveCJPPU": "",
+        "rut": "219537410019"
+      }
+    },
+    {
+      "id": 127,
+      "nombre": "Martin Otero (servicio Domestico) ",
+      "estado": "Activo",
+      "ficha": "F0127",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8341826",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": ""
+      }
+    },
+    {
+      "id": 128,
+      "nombre": "Moio (software) ",
+      "estado": "Activo",
+      "ficha": "F0128",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8623343",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "219825350011"
+      }
+    },
+    {
+      "id": 129,
+      "nombre": "Orlando Quevedo ",
+      "estado": "Activo",
+      "ficha": "F0129",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8885858",
+        "usuarioBPS": "64336697",
+        "claveBPS": "Empresa20543232AA",
+        "ciCliente": "64336697",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "220346650019"
+      }
+    },
+    {
+      "id": 130,
+      "nombre": "Marcelo Nabel",
+      "estado": "Activo",
+      "ficha": "F0130",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "",
+        "usuarioBPS": "",
+        "claveBPS": "",
+        "ciCliente": "64992390",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": ""
+      }
+    },
+    {
+      "id": 131,
+      "nombre": "Margot Mercier",
+      "estado": "Activo",
+      "ficha": "F0131",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 8,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8895798",
+        "usuarioBPS": "55739004",
+        "claveBPS": "270996Fm++",
+        "ciCliente": "55739004",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "220368430011"
+      }
+    },
+    {
+      "id": 132,
+      "nombre": "GODOY AGROINDUSTRIA SAS",
+      "estado": "Activo",
+      "ficha": "F0132",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "",
+        "usuarioBPS": "56687721",
+        "claveBPS": "Lola123lola",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "219786110019"
+      }
+    },
+    {
+      "id": 133,
+      "nombre": "Juan Kaitazoff - SWEETLEAF SAS",
+      "estado": "Activo",
+      "ficha": "F0133",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 6,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "7609041",
+        "usuarioBPS": "44016116",
+        "claveBPS": "peroncHo.2020",
+        "ciCliente": "",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "70276100019"
+      }
+    },
+    {
+      "id": 134,
+      "nombre": "Pedro Franco ",
+      "estado": "Activo",
+      "ficha": "F0134",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 2,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8988696",
+        "usuarioBPS": "34199075",
+        "claveBPS": "Emayringo6758",
+        "ciCliente": "34199075",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "215036610012"
+      }
+    },
+    {
+      "id": 135,
+      "nombre": "KF SERVICE SAS",
+      "estado": "Activo",
+      "ficha": "F0135",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8953209",
+        "usuarioBPS": "36834625",
+        "claveBPS": "Kostumo6865$",
+        "ciCliente": "",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "220468850012"
+      }
+    },
+    {
+      "id": 136,
+      "nombre": "INICIOSV SAS ",
+      "estado": "Activo",
+      "ficha": "F0136",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 6,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8975534",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "220502200011"
+      }
+    },
+    {
+      "id": 137,
+      "nombre": "CZP SAS",
+      "estado": "Activo",
+      "ficha": "F0137",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "8996322",
+        "usuarioBPS": "47034888",
+        "claveBPS": "123EnzoBPS",
+        "ciCliente": "",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "220540690012"
+      }
+    },
+    {
+      "id": 138,
+      "nombre": "Trapa Estudio Creativo SAS",
+      "estado": "Activo",
+      "ficha": "F0138",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "9001927",
+        "usuarioBPS": "46447125",
+        "claveBPS": "Giuli1995",
+        "ciCliente": "46447125",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "220550360015"
+      }
+    },
+    {
+      "id": 139,
+      "nombre": "GIRALDI VARELA SEGUROS SAS",
+      "estado": "Activo",
+      "ficha": "F0139",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "9025113",
+        "usuarioBPS": "44393017",
+        "claveBPS": "Martin1989",
+        "ciCliente": "44393017",
+        "usuarioGub": "Martin-1989",
+        "claveGub": "Usuario Ana",
+        "claveCJPPU": "",
+        "rut": "220589700011"
+      }
+    },
+    {
+      "id": 140,
+      "nombre": "Kevin Laborde SAS",
+      "estado": "Activo",
+      "ficha": "F0140",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "9009857",
+        "usuarioBPS": "46742632",
+        "claveBPS": "g@D77iRueXFfBW&",
+        "ciCliente": "46742632",
+        "usuarioGub": "45023732",
+        "claveGub": "3969*Calabria",
+        "claveCJPPU": "",
+        "rut": "220563720015"
+      }
+    },
+    {
+      "id": 141,
+      "nombre": "RIOTEC SAS ",
+      "estado": "Activo",
+      "ficha": "F0141",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "9044561",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "220625260012"
+      }
+    },
+    {
+      "id": 142,
+      "nombre": "NAJAR SAS ",
+      "estado": "Activo",
+      "ficha": "F0142",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "9044504",
+        "usuarioBPS": "45023732",
+        "claveBPS": "Calabria3969",
+        "ciCliente": "",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "220625150012"
+      }
+    },
+    {
+      "id": 143,
+      "nombre": "Diego Barquet",
+      "estado": "Activo",
+      "ficha": "F0143",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 4,
+      "auxiliarId": 7,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "9026783",
+        "usuarioBPS": "45023732",
+        "claveBPS": "3969*Calabria",
+        "ciCliente": "45351999",
+        "usuarioGub": "",
+        "claveGub": "",
+        "claveCJPPU": "",
+        "rut": "220593810012"
+      }
+    },
+    {
+      "id": 144,
+      "nombre": "Renova SAS",
+      "estado": "Activo",
+      "ficha": "F0144",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "9054088",
+        "usuarioBPS": "44016116",
+        "claveBPS": "peroncHo.2020",
+        "ciCliente": "",
+        "usuarioGub": "44016116",
+        "claveGub": "peroncHo.2020",
+        "claveCJPPU": "",
+        "rut": "220641850015"
+      }
+    },
+    {
+      "id": 145,
+      "nombre": "Las Manolas",
+      "estado": "Activo",
+      "ficha": "F0145",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 3,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "9061390",
+        "usuarioBPS": "38769840",
+        "claveBPS": "sugbon-Karne0-caznat",
+        "ciCliente": "38769840",
+        "usuarioGub": "38769840",
+        "claveGub": "Maite100796620012",
+        "claveCJPPU": "",
+        "rut": "220654790016"
+      }
+    },
+    {
+      "id": 146,
+      "nombre": "Finanzas SAS - Gaston Perez",
+      "estado": "Activo",
+      "ficha": "F0146",
+      "servicios": {
+        "contabilidad": true,
+        "sueldos": true,
+        "impuestos": true,
+        "regimenInformativo": "Mensual"
+      },
+      "socioId": 1,
+      "supervisorId": 6,
+      "auxiliarId": 5,
+      "generarTareasAutomaticas": false,
+      "datosAdicionales": {
+        "numeroBPS": "9061455",
+        "usuarioBPS": "",
+        "claveBPS": "",
+        "ciCliente": "45827063",
+        "usuarioGub": "45827063",
+        "claveGub": "boqpug-riktuh-4kUcko",
+        "claveCJPPU": "",
+        "rut": "220654900016"
+      }
+    }
+  ],
+  "tareas": [],
+  "auditoria": []
+}
