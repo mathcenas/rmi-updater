@@ -43,6 +43,69 @@ lugares y en el `container_name:` real del `docker-compose.yml` de esa app —
 si no coincide ni un carácter, ni el estado de contenedores ni el restart
 automático del deploy lo van a encontrar.
 
+## Qué tiene que tener el `docker-compose.yml` de CADA servicio
+
+Estos `docker-compose.yml` **no viven en este repo** (son de "otro proyecto",
+cada app se despliega desde su propia carpeta en `/srv`), pero el uploader
+depende de que tengan el `container_name:` exacto de la tabla de arriba. Lo
+único que le importa al uploader de cada uno es esa línea — el resto
+(imagen, puertos, volúmenes de datos, red) es cosa de cada servicio.
+
+**`/srv/gestion-rmi/prod/docker-compose.yml`** (producción):
+```yaml
+services:
+  gestion-rmi:
+    build: .
+    container_name: gestion-rmi   # <- tiene que ser este nombre, ni uno más
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+```
+
+**`/srv/gestion-rmi/testing/docker-compose.yml`** (testing — mismo servicio,
+otro puerto y otro nombre para no chocar con el de prod):
+```yaml
+services:
+  gestion-rmi-testing:
+    build: .
+    container_name: gestion-rmi-testing
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+```
+
+**`/srv/contabilidad-rmi/rmi-contabilidad/docker-compose.yml`**:
+```yaml
+services:
+  contabilidad-rmi:
+    build: .
+    container_name: contabilidad-rmi
+    restart: unless-stopped
+    ports:
+      - "3002:3000"   # ajustar al puerto real que use esta app
+```
+
+Si alguno de estos contenedores ya existe pero con otro nombre (por ejemplo
+quedó de una migración vieja, tipo `rmi-sistema1.1`), lo más simple es
+bajarlo y volver a levantarlo con el `container_name:` correcto:
+```bash
+docker compose down       # desde la carpeta de esa app
+docker compose up -d      # ya va a quedar creado con el nombre nuevo
+```
+No hace falta recrear el volumen de datos ni perder nada — el nombre del
+contenedor es independiente de los datos, que quedan en los volúmenes/bind
+mounts de `./data`, etc.
+
+Una vez que el nombre coincide, tanto el panel de "Estado de contenedores"
+como el botón Deploy/Restaurar del admin lo van a encontrar sin tocar nada
+más de este repo.
+
 ## Cómo se detecta el estado de un contenedor
 
 `GET /mgmt/container-status` corre, **desde adentro del contenedor
