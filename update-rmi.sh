@@ -30,18 +30,21 @@ case "$APP" in
     APP_ENV="Produccion"
     APP_DIR="/srv/gestion-rmi/prod"
     CONTAINER="gestion-rmi"
+    CONTAINER_WORKDIR="/app"
     ;;
   gestion_test)
     APP_LABEL="Gestion RMI"
     APP_ENV="Testing"
     APP_DIR="/srv/gestion-rmi/testing"
     CONTAINER="gestion-rmi-testing"
+    CONTAINER_WORKDIR="/app"
     ;;
   contabilidad_prod)
     APP_LABEL="Contabilidad RMI"
     APP_ENV="Produccion"
     APP_DIR="/srv/contabilidad-rmi/rmi-contabilidad"
     CONTAINER="contabilidad-rmi"
+    CONTAINER_WORKDIR="/app"
     ;;
   *)
     echo "ERROR: app desconocida '$APP'. Usar: gestion_prod | gestion_test | contabilidad_prod"
@@ -99,6 +102,20 @@ done
 # ── Reiniciar contenedor ──────────────────────────────────────────────────────
 echo "Reiniciando contenedor $CONTAINER..."
 docker restart "$CONTAINER" 2>&1 && RESTART_OK=true || RESTART_OK=false
+
+# ── Validar que el contenedor esta sirviendo el server.js recien copiado ──────
+if [ "$RESTART_OK" = "true" ] && [ -f "$APP_DIR/server.js" ]; then
+  sleep 2
+  HOST_HASH=$(md5sum "$APP_DIR/server.js" | awk '{print $1}')
+  CONTAINER_HASH=$(docker exec "$CONTAINER" md5sum "$CONTAINER_WORKDIR/server.js" 2>/dev/null | awk '{print $1}')
+  if [ -z "$CONTAINER_HASH" ]; then
+    echo "Validacion: no se pudo leer server.js dentro del contenedor (revisar ruta $CONTAINER_WORKDIR/server.js)."
+  elif [ "$HOST_HASH" = "$CONTAINER_HASH" ]; then
+    echo "Validacion: OK — el contenedor esta sirviendo el server.js recien copiado ($HOST_HASH)."
+  else
+    echo "Validacion: ALERTA — el server.js del contenedor NO coincide con el del host (host=$HOST_HASH, contenedor=$CONTAINER_HASH). Puede que la imagen necesite --build en vez de restart."
+  fi
+fi
 
 DEPLOY_DATE=$(date '+%Y-%m-%d %H:%M:%S')
 echo ""
