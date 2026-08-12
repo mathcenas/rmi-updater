@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package.json ./
 RUN npm install --production
 COPY server.js ./
+COPY README.md ./
 COPY public ./public
 EXPOSE 8080
 ENV NODE_ENV=production

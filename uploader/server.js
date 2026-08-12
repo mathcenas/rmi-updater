@@ -478,6 +478,14 @@ app.get('/mgmt/container-status', adminAuth, (req, res) => {
   });
 });
 
+app.get('/mgmt/readme', adminAuth, (req, res) => {
+  try {
+    res.type('text/plain').send(fs.readFileSync(path.join(__dirname, 'README.md'), 'utf-8'));
+  } catch (e) {
+    res.status(404).type('text/plain').send('README.md no disponible en esta imagen.');
+  }
+});
+
 // ── Utils ─────────────────────────────────────────────────────────────────────
 
 function cleanTmp(dir) {
