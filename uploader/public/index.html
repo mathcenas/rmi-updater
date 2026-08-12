@@ -493,7 +493,13 @@
 
       try {
         const res  = await fetch('/upload', { method: 'POST', headers: { 'x-upload-password': pass }, body: fd });
-        const data = await res.json();
+        const text = await res.text();
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch {
+          throw new Error(`El servidor respondio HTTP ${res.status} en vez de una respuesta valida — probablemente el archivo es demasiado grande o la conexion se corto.`);
+        }
 
         if (res.ok && data.ok) {
           const lista = (data.archivos || []).map(f => `<span style="font-family:monospace;font-size:11px">${f}</span>`).join('<br>');
